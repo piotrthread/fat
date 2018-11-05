@@ -45,6 +45,7 @@ class SetTimer extends React.Component{
             },1000);
             if(this.state.roundCount == 1){
                 clearInterval(this.timer);
+                this.setState({roundCount: this.state.roundNumber});
             }
         },time);
     }
