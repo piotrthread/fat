@@ -25,7 +25,7 @@ class Timer extends React.Component{
             roundCount: this.state.roundNumber
         });
 
-        let time = (this.state.activeTime + this.state.restTime + 1)*1000;
+        let time = (this.state.activeTime + this.state.restTime + 2)*1000;
 
         this.timer = startInterval(() => {
             
