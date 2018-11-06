@@ -20,40 +20,50 @@ class Timer extends React.Component{
     }
     startTimer = (e) => {
         e.preventDefault();
-
-        this.setState({
-            roundCount: this.state.roundNumber
-        });
-
-        let time = (this.state.activeTime + this.state.restTime + 2)*1000;
-
+        this.setState({roundCount: this.state.roundNumber});
         this.timer = startInterval(() => {
-            
+            clearInterval(this.workout);
+            clearInterval(this.rest);
             this.setState({
-                activeCount: this.state.activeTime,
-                restCount: this.state.activeTime + this.state.restTime,
-                train:true
+                train: true
             });
-
-            this.active = setInterval(() => {
-                if(this.state.activeCount == 0){
-                    this.setState({train: false}, () => {
-                        clearInterval(this.active);
-                    });
-                }else{
-                    this.setState({activeCount: this.state.activeCount - 1});
-                }
-            },1000);
-
-            this.rest = setInterval(() => {
-                if(this.state.restCount == 0){
-                        clearInterval(this.rest);
-                }else{
-                    this.setState({restCount: this.state.restCount - 1});
-                }
-            },1000);
-
-        },time);
+            if(this.state.roundCount == 0){
+                this.setState({
+                    activeCount: null,
+                    restCount: null,
+                    roundCount: null
+                });
+                clearInterval(this.timer);
+                clearInterval(this.workout);
+                clearInterval(this.rest);
+            }else{
+                this.setState({
+                    activeCount: this.state.activeTime,
+                    restCount: this.state.restTime
+                });
+                setTimeout(() => {
+                    this.rest = setInterval(() => {
+                        this.setState({
+                            restCount: this.state.restCount -1
+                        });
+                    },1000);
+                },this.state.activeTime * 1000);
+                this.workout = setInterval(() => {
+                    if(this.state.activeCount == 0){
+                        this.setState({
+                            roundCount: this.state.roundCount - 1,
+                            train: false
+                            }, () => {
+                            clearInterval(this.workout);
+                        });
+                    }else{
+                        this.setState({
+                            activeCount: this.state.activeCount - 1
+                        });
+                }   
+                },1000);
+            }
+        },(this.state.activeTime + this.state.restTime + 1) * 1000);
     }
     render(){
         return <React.Fragment>
