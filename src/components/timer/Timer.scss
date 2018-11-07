@@ -1,13 +1,24 @@
-.startButton{
-    width:100px;
-    height:40px;
-    border-radius:25px;
-    border:0;
-    cursor: pointer;
-    outline: none;
-    transition: all .3s;
+.fat{
+    .intervalCounter{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
-    &:hover{
-        background-color: #22d66e;
+        .startButton{
+            margin:0;
+            width:100px;
+            height:40px;
+            border-radius:25px;
+            border:0;
+            cursor: pointer;
+            outline: none;
+            transition: all .3s;
+        
+            &:hover{
+                background-color: #22d66e;
+            }
+        }
     }
 }
+
