@@ -13,13 +13,13 @@ class Timer extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            roundNumber: 5,
-            activeTime:5,
-            restTime:3,
+            roundNumber: 8,
+            activeTime:20,
+            restTime:10,
             roundCount: null,
             activeCount: null,
             restCount: null,
-            train:false
+            train: false
         };
     }
     startTimer = (e) => {

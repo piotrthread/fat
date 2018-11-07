@@ -13,11 +13,11 @@ class Round extends React.Component{
                     markerArray.map((element, index) => {
                         if(index <= Math.abs(this.props.currRound - this.props.allRound) - 1){
                             styles = {
-                                backgroundColor: "red"
+                                backgroundColor: "rgba(255,255,255,.8)"
                             };
                         }else{
                             styles = {
-                                backgroundColor: "black"
+                                backgroundColor: "rgba(255,255,255,.1)"
                             };
                         }
                         return <li key={index} className="marker" style={styles}></li>;        
