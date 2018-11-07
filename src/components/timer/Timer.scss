@@ -1,9 +1,20 @@
 .fat{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height:100vh;
+    padding:7vw;
+    
     .intervalCounter{
         display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width:50vw;
+        height:50vh;
+        transform:scale(1.5);
 
         .startButton{
             margin:0;
