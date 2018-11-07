@@ -1,0 +1,12 @@
+.roundMarker{
+    .markers{
+        list-style-type: none;
+        display:flex;
+        .marker{
+            list-style-type: none;
+            width:25px;
+            height:25px;
+            border-radius:13px;
+        }
+    }
+}

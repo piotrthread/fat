@@ -1,11 +1,13 @@
 import React from 'react';
+import css from './App.scss';
 import Timer from '../timer/Timer.jsx';
 
 class App extends React.Component{
     render(){
         return <React.Fragment>
-                <h1>FAT - Free Athlete Timer</h1>
-                <Timer />
+                    <div className="timer">
+                        <Timer />
+                    </div>
         </React.Fragment>;
     }
 }
