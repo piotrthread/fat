@@ -1,0 +1,108 @@
+.menu-bar{
+    height:60px;
+    width:60px;
+    background-color: #00aeef;
+    padding:16px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    .menu-hamburger{
+        width:30px;
+        height: 28px;
+        cursor: pointer;
+        position: relative;
+        transition: all .3s;
+
+        .line{
+            width:30px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            top:12px;
+            left:-1px;
+            opacity:1;
+            transition: all .3s;
+        }
+
+        &:after{
+            content:"";
+            display: block;
+            width:30px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            top:0;
+            left:-1px;
+            transition: all .3s;
+        }
+
+        &:before{
+            content:"";
+            display: block;
+            width:30px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            bottom:0;
+            left:-1px;
+            transition: all .3s;
+        }
+    }
+
+    .menu-hamburger-active{
+        width:30px;
+        height: 28px;
+        cursor: pointer;
+        position: relative;
+        opacity:1;
+        transition: all .3s;
+
+        .line-active{
+            width:30px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            top:12px;
+            left:-2px;
+            transform: scale(2);
+            opacity:0;
+            transition: all .3s;
+        }
+
+        &:after{
+            content:"";
+            display: block;
+            width:32px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            top:12px;
+            left:-2px;
+            transform-origin: 50% 50%;
+            transform: rotate(45deg);
+            transition: all .3s;
+        }
+
+        &:before{
+            content:"";
+            display: block;
+            width:32px;
+            height:4px;
+            border-radius:2px;
+            background-color: white;
+            position: absolute;
+            bottom:12px;
+            left:-2px;
+            transform-origin: 50% 50%;
+            transform: rotate(-45deg);
+            transition: all .3s;
+        }
+    }
+
+}

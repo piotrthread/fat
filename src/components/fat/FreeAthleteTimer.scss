@@ -1,0 +1,39 @@
+.fatContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111a28;
+    color: white;
+
+    .hamburgerMenu{
+        position: absolute;
+        z-index:2;
+        top:40px;
+        left:40px;
+        transform: scale(.9);
+    }
+    .settingsVisible{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:1;
+        transition: left .3s;
+        width:100vw;
+        height:100vh;
+        background-color: #00aeef;
+    }
+    .settingsHidden{
+        position: absolute;
+        top:0;
+        left: -100vw;
+        z-index:1;
+        transition: left .3s;
+        width:100vw;
+        height:100vh;
+        background-color: #00aeef;
+    }
+}
