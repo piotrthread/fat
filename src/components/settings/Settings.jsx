@@ -6,6 +6,7 @@ class Settings extends React.Component{
         return <React.Fragment>
             <div className="settings">
                 <h1>Timer Settings.</h1>
+                
             </div>
         </React.Fragment>;
     }

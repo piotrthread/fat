@@ -20,8 +20,8 @@ class Menu extends React.Component{
         return <React.Fragment>
             <nav>
                 <div className="container">
-                    <div className="menu-bar">
-                        <div className={this.state.active ? "menu-hamburger-active" : "menu-hamburger"} onClick={this.handleClick}>
+                    <div className="menu-bar" onClick={this.handleClick}>
+                        <div className={this.state.active ? "menu-hamburger-active" : "menu-hamburger"}>
                             <div className={this.state.active ? "line-active" : "line"}></div>
                         </div>
                     </div>
