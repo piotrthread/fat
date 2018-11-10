@@ -3,12 +3,14 @@ import css from './FreeAthleteTimer.scss';
 import Welcome from '../welcome/Welcome.jsx';
 import Menu from '../menu/Menu.jsx';
 import Settings from '../settings/Settings.jsx';
+import Success from '../success/Success.jsx';
 
 class FreeAthleteTimer extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            menuActive: false
+            menuActive: false,
+            successActive: false
         };
     }
     openMenu = () => {
@@ -22,6 +24,9 @@ class FreeAthleteTimer extends React.Component{
                 </div>
                 <div className={this.state.menuActive ? "settingsVisible" : "settingsHidden"}>
                     <Settings />
+                </div>
+                <div className={this.state.successActive ? "successVisible" : "successHidden"}>
+                    <Success />
                 </div>
                 <Welcome  menuClick={this.openMenu}/>
             </div>
