@@ -51,18 +51,18 @@ class Settings extends React.Component{
             <div className="settings">
                 <h1>Timer Settings.</h1>
                 <div className="rounds">
+                <button className="minus" onClick={this.roundMinus}>-</button>
                     <h2>ROUNDS: {this.state.roundQty}</h2>
-                    <button className="minus" onClick={this.roundMinus}>-</button>
                     <button className="plus" onClick={this.roundPlus}>+</button>
                 </div>
                 <div className="active">
-                    <h2>ROUND TIME: {this.state.activeTime}s</h2>
                     <button className="minus" onClick={this.activeMinus}>-</button>
+                    <h2>WORKOUT: {this.state.activeTime}s</h2>
                     <button className="plus" onClick={this.activePlus}>+</button>
                 </div>
                 <div className="rest">
-                    <h2>REST TIME: {this.state.restTime}s</h2>
                     <button className="minus" onClick={this.restMinus}>-</button>
+                    <h2>REST: {this.state.restTime}s</h2>
                     <button className="plus" onClick={this.restPlus}>+</button>
                 </div>
             </div>
