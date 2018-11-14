@@ -45,6 +45,10 @@ class Settings extends React.Component{
             this.setState({restTime: this.state.restTime - 1});
         }
     }
+    handleSave = (e) => {
+        e.preventDefault();
+        this.props.onSave();
+    }
 
     render(){
         return <React.Fragment>
@@ -65,6 +69,7 @@ class Settings extends React.Component{
                     <h2>REST: {this.state.restTime}s</h2>
                     <button className="plus" onClick={this.restPlus}>+</button>
                 </div>
+                <button className="save" onClick={this.handleSave}>SAVE</button>
             </div>
         </React.Fragment>;
     }

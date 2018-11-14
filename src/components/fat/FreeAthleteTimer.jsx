@@ -10,20 +10,25 @@ class FreeAthleteTimer extends React.Component{
         super(props);
         this.state = {
             menuActive: false,
-            successActive: false
+            successActive: false,
+            timerReady: false
         };
     }
     openMenu = () => {
         this.setState({menuActive: !this.state.menuActive});
     }
+    readyToStart = () => {
+        this.setState({menuActive: !this.state.menuActive,
+                       timerReady: true });
+    }
     render(){
         return <React.Fragment>
             <div className="fatContainer">
                 <div className="hamburgerMenu">
-                    <Menu menuClick={this.openMenu}/>
+                    <Menu menuClick={this.openMenu} menuActive={this.state.menuActive}/>
                 </div>
                 <div className={this.state.menuActive ? "settingsVisible" : "settingsHidden"}>
-                    <Settings />
+                    <Settings onSave={this.readyToStart} menuActive={this.state.menuActive}/>
                 </div>
                 <div className={this.state.successActive ? "successVisible" : "successHidden"}>
                     <Success />
