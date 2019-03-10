@@ -73,6 +73,7 @@ class Timer extends React.Component{
         }
     }
 
+    
     render(){
         return <React.Fragment>
             <div className="fat">
